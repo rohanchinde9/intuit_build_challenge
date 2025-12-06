@@ -5,18 +5,24 @@ A compact, easy-to-run utility that analyzes a Superstore-style sales CSV using 
 ## Requirements
 
 - Python 3.11+
-- No third‑party packages (uses `csv`, `dataclasses`, `collections`, `pathlib`, `typing`, `unittest`)
+-  No external dependencies; only Python standard library modules are used ( `csv`, `dataclasses`, `collections`, `pathlib`, `typing`, `unittest`)
 
-## Repository layout
+## Project Structure
 
-- data/
-  - superstore_sales.csv — input dataset
-- src/
-  - sales_model.py — `Sale` dataclass + `read_sales(csv_path)` generator
-  - sales_analysis.py — analysis functions (total, groupings, top‑N)
-  - main.py — example runner / prints results
-- tests/
-  - test_sales_analysis.py — unit tests for analysis functions
+### `data/`
+
+- **`superstore_sales.csv`** – Superstore-style sales dataset used as the input for all analyses. [web:220]
+
+### `src/`
+
+- **`sales_model.py`** – `Sale` dataclass representing a single CSV row and `read_sales(csv_path)` generator that streams records using the standard `csv` module. [web:233]
+- **`sales_analysis.py`** – Pure, functional-style analysis functions for total revenue, group-by aggregations (region, category, segment), and top‑N product ranking.
+- **`main.py`** – Entry point that loads the CSV file, invokes the analysis functions, and prints all analysis results to the console.
+
+### `tests/` (all using `unittest`)
+
+- **`test_sales_analysis.py`** – Unit tests for all analysis functions (`total_revenue`, `revenue_by_region`, `revenue_by_category`, `revenue_by_segment`, `top_n_products_by_revenue`). [web:176]
+
 
 ## Setup
 
@@ -72,7 +78,7 @@ Top 5 products by revenue:
 
 (To reproduce, run `python -m src.main` from the sales_data_analysis folder.)
 
-## Tests
+## Running Tests
 
 Run all unit tests:
 
