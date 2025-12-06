@@ -21,9 +21,11 @@ def main():
     consumer.join()
 
     print("\n=== Summary ===")
-    print("Source:", source.items)
-    print("Destination:", destination.items)
-    print("Same:", source.items == destination.items)
+    print("Source items:     ", source.items)
+    print("Destination items:", destination.items)
+    print("All items transferred correctly:",
+      source.items == destination.items)
+
 
 
 if __name__ == "__main__":

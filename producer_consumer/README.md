@@ -69,12 +69,11 @@ This:
 [Consumer] Consumed: 8
 [Producer] Produced: 9
 [Consumer] Consumed: 9
-[Producer] Enqueued sentinel
 
 === Summary ===
-Source: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-Destination: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-Same: True
+Source items:      [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Destination items: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+All items transferred correctly: True
 ```
 
 This confirms that every item produced was successfully consumed and transferred from source to destination.
